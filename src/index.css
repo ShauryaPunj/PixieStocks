@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Stock Signal Platform Design System - Dark Futuristic Theme */
+
+@layer base {
+  :root {
+    /* Dark navy backgrounds */
+    --bg-navy: 203 65% 10%; /* #0A1628 in HSL */
+    --bg-navy-lighter: 203 60% 15%;
+    
+    /* Gradient backgrounds */
+    --bg-gradient-primary: linear-gradient(180deg, hsl(203 70% 6%) 0%, hsl(203 65% 12%) 100%);
+    
+    /* Accent colors - bright and futuristic */
+    --accent-cyan: 191 100% 50%; /* #00D4FF */
+    --accent-cyan-hover: 191 100% 45%;
+    --accent-green: 151 100% 50%; /* #00FF88 */
+    --accent-magenta: 320 100% 50%; /* #FF0080 */
+    --accent-warning: 43 100% 50%; /* #FFB800 */
+    
+    /* Glass morphism */
+    --glass: hsla(0, 0%, 100%, 0.04);
+    --glass-strong: hsla(0, 0%, 100%, 0.08);
+    
+    /* Text colors */
+    --text-primary: 205 100% 95%; /* #EAF6FF */
+    --text-muted: 218 22% 63%; /* #93A3B8 */
+    --text-inverse: 203 65% 10%;
+    
+    /* System colors mapped to design */
+    --background: 203 65% 10%;
+    --foreground: 205 100% 95%;
+    
+    --card: 203 65% 10%;
+    --card-foreground: 205 100% 95%;
+    
+    --popover: 203 60% 15%;
+    --popover-foreground: 205 100% 95%;
+    
+    --primary: 191 100% 50%;
+    --primary-foreground: 203 65% 10%;
+    
+    --secondary: 203 60% 15%;
+    --secondary-foreground: 205 100% 95%;
+    
+    --muted: 203 60% 15%;
+    --muted-foreground: 218 22% 63%;
+    
+    --accent: 151 100% 50%;
+    --accent-foreground: 203 65% 10%;
+    
+    --destructive: 320 100% 50%;
+    --destructive-foreground: 205 100% 95%;
+    
+    --border: hsla(0, 0%, 100%, 0.08);
+    --input: hsla(0, 0%, 100%, 0.08);
+    --ring: 191 100% 50%;
+    
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Dark theme inherits from root - we're already dark by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--bg-gradient-primary);
+    min-height: 100vh;
+  }
+  
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--accent-cyan) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--accent-cyan) / 0.6);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+  }
+  
+  /* Hero CTA button */
+  .btn-hero {
+    @apply inline-flex items-center gap-3 py-3 px-6 rounded-2xl font-semibold;
+    background: linear-gradient(135deg, hsl(var(--accent-cyan)), hsl(var(--accent-cyan-hover)));
+    color: hsl(var(--text-inverse));
+    box-shadow: 0 10px 30px hsl(var(--accent-cyan) / 0.3);
+    transition: all 0.2s ease-out;
+  }
+  
+  .btn-hero:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px hsl(var(--accent-cyan) / 0.4);
+  }
+  
+  /* Feature card */
+  .feature-card {
+    @apply glass-card rounded-2xl p-6 transition-all duration-200;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.3);
+  }
+  
+  /* Metric chip */
+  .metric-chip {
+    @apply inline-flex items-center gap-3 p-3 rounded-lg;
+    background: hsla(0, 0%, 0%, 0.3);
+  }
+}

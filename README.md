@@ -55,4 +55,3 @@ Deploy wherever your prophecies want to shine:
 PixieProphets isn’t just predictions — it’s ✨vibes + lore✨.
 Thank you for wandering into this enchanted finance forest 🌌.
 Stay whimsical, stay curious, and may your bugs be tiny & cute 🐛💎.
-
